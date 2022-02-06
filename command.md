@@ -14,3 +14,13 @@ pip freeze > requirements.txt
 
 **install from requirements**
 python -m pip install -r requirements.txt
+
+
+**create Django project**
+django-admin startproject Pyjob_Website
+
+
+
+
+**installed packages**
+python -m pip install Django
