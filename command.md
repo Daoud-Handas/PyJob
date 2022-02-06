@@ -1,26 +1,37 @@
-contains all the needed command to setup the project
+Contains all the needed command to set up the project.\
+The website is accessible at : http://127.0.0.1:8000/
 
-**create venv**
-python -m venv ./venv
+## Setup virtual environment 
+**create venv :**
+`python -m venv ./venv`
 
 **start venv :**
-./venv/Scripts/activate
+`./venv/Scripts/activate`
 
-**stop venv**
-deactivate
+**stop venv :**
+`deactivate`
 
-**update requirements.txt**
-pip freeze > requirements.txt
+**update requirements.txt :**
+`pip freeze > requirements.txt`
 
-**install from requirements**
-python -m pip install -r requirements.txt
+**install from requirements :**
+`python -m pip install -r requirements.txt`
+
+**installed packages :**
+* `python -m pip install Django`
+
+## Django command
+**create Django project :**
+`django-admin startproject PyJob_Website`
+
+**create app**
+`python manage.py startapp Jobs`
+
+**run migration**
+`python manage.py migrate`
+
+**run server**
+`python manage.py runserver`
 
 
-**create Django project**
-django-admin startproject Pyjob_Website
 
-
-
-
-**installed packages**
-python -m pip install Django
