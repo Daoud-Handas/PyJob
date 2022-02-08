@@ -27,11 +27,17 @@ The website is accessible at : http://127.0.0.1:8000/
 **create app**
 `python manage.py startapp Jobs`
 
-**run migration**
+**create migration :**
+`python manage.py makemigrations`
+
+**run migration :**
 `python manage.py migrate`
 
-**run server**
+**run server :**
 `python manage.py runserver`
+
+**pour tester en mode shell :**
+`python manage.py shell`
 
 
 
