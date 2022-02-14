@@ -25,5 +25,5 @@ class Job(models.Model):
             description: {self.description}
             salary: {self.salary}
             date_published: {self.date_published}
-            url: {self.description}
+            url: {self.url}
         """

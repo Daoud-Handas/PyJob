@@ -24,7 +24,7 @@ The website is accessible at : http://127.0.0.1:8000/
 **create Django project :**
 `django-admin startproject PyJob_Website`
 
-**create app**
+**create app :**
 `python manage.py startapp Jobs`
 
 **create migration :**
