@@ -12,6 +12,7 @@ class Job(models.Model):
     description = models.CharField(max_length=5000)
     salary = models.IntegerField(null=True)
     date_published = models.DateTimeField()
+    date_start = models.CharField(max_length=500, null=True)
     url = models.CharField(max_length=100)
 
     def __str__(self):
@@ -25,5 +26,17 @@ class Job(models.Model):
             description: {self.description}
             salary: {self.salary}
             date_published: {self.date_published}
+            date_start: {self.date_start}
             url: {self.url}
+        """
+
+
+class Email(models.Model):
+    email = models.EmailField(max_length=100)
+    name = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return f"""
+            email: {self.email}
+            name: {self.name}
         """
