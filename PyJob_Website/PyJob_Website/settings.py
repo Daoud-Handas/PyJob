@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,3 +133,5 @@ EMAIL_HOST_USER = 'pyjob.esgi@gmail.com'
 EMAIL_HOST_PASSWORD = 'PyJob2022'
 EMAIL_PORT = 587
 
+
+# CSRF protection for form
