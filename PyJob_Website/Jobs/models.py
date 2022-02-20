@@ -36,10 +36,5 @@ class Job(models.Model):
 
 class Email(models.Model):
     email = models.EmailField(max_length=100, primary_key=True)
-    name = models.CharField(max_length=50, null=True)
+    name = models.CharField(max_length=50, null=True, default=None)
 
-    def __str__(self):
-        return f"""
-            email: {self.email}
-            name: {self.name}
-        """
