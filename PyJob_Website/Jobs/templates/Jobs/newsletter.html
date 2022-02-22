@@ -1,0 +1,16 @@
+{% if user %}
+    <p>Hello {{ user }}, how is your python today ?</p>
+{% endif %}
+{% if jobs|length > 0 %}
+    <h2>Here is today's job</h2>
+    <ul>
+        {% for job in jobs %}
+            <h3>{{ job.title}}</h3>
+            <p>{{ job.company}}</p>
+            <p><a href="{{job.url}}}" >Go see it --></a></p>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nothing new to show you today, stay tuned !</p>
+{% endif %}
+<p><a href="http://127.0.0.1:8000">Visit our website to see more</a></p>

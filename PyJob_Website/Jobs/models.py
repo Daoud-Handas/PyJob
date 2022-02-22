@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
@@ -10,8 +11,10 @@ class Job(models.Model):
     remote = models.CharField(max_length=50, null=True)
     education_level = models.CharField(max_length=50, null=True)
     description = models.CharField(max_length=5000)
-    salary = models.IntegerField(null=True)
+    salary = models.CharField(max_length=50, null=True)
     date_published = models.DateTimeField()
+    date_start = models.CharField(max_length=500, null=True)
+    date_added = models.DateTimeField(default=timezone.now)
     url = models.CharField(max_length=100)
 
     def __str__(self):
@@ -22,8 +25,16 @@ class Job(models.Model):
             location: {self.location}
             remote: {self.remote}
             education_level: {self.education_level}
-            description: {self.description}
+            description: {self.description[0:100]}...
             salary: {self.salary}
             date_published: {self.date_published}
-            url: {self.description}
+            date_start: {self.date_start}
+            date_added: {self.date_added}
+            url: {self.url}
         """
+
+
+class Email(models.Model):
+    email = models.EmailField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=50, null=True, default=None)
+
