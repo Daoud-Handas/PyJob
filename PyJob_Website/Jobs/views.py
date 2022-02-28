@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from .indeed import *
+from .models import Job
 from django.shortcuts import render
 from django.contrib import messages
 
@@ -7,8 +9,12 @@ from .models import Email
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the Jobs index.")
+    template = 'https://fr.indeed.com/jobs?q={}&l={}'
+    url = template.format('data scientist', 'Paris')
+    soup = BeautifulSoup(response.text, 'html.parser')
+    cards = soup.find_all('div', 'job_seen_beacon')
 
+    #jobs = Job.objects.all()[:15]
 
 def email(request):
 
@@ -29,3 +35,5 @@ def email(request):
     else:
         form = EmailForm()
     return render(request, 'Jobs/email.html', {'form': form})
+
+    return render(request, "index.html", context={'jobs': jobs})
