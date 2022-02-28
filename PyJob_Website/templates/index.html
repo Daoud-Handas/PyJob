@@ -95,38 +95,32 @@
     <main class="max-w-6xl mx-auto py-24">
 
         <div class="grid grid-cols-3 gap-12">
-            {%for
-            <div class="dark:bg-very-dark-blue bg-white w-full shadow rounded px-6 py-8 space-y-6">
+            {% for job in jobs%}
+                <div class="dark:bg-very-dark-blue bg-white w-full shadow rounded px-6 py-8 space-y-6">
+                    <div class="text-dark-gray font-light leading-7 mb-6">
+                        <p class="space-x-2">
+                        <a href={{job.url}}>
+                            {{job.title}}
+                        </a>
+                            <span class="inline-block w-1 h-1 rounded-full bg-dark-gray"></span>
+                            <span>
+                            {{job.company}}
+                        </span>
+                        </p>
+                        <p class="font-semibold dark:text-white">
+                            {{job.description}}
+                        </p>
+                        <p>
+                            {{job.date_published}}
+                        </p>
+                    </div>
 
+                    <a href="#" class="text-indigo-600 font-semibold">
+                        {{job.location}}
+                    </a>
 
-                <div class="text-dark-gray font-light leading-7 mb-6">
-                    <p class="space-x-2">
-                    <span>
-                        5h ago
-                    </span>
-                        <span class="inline-block w-1 h-1 rounded-full bg-dark-gray"></span>
-                        <span>
-                        Full Time
-                    </span>
-                    </p>
-                    <p class="font-semibold dark:text-white">
-                        Senior Software Engineer
-                    </p>
-                    <p>
-                        Scoot
-                    </p>
                 </div>
-
-
-
-                <a href="#" class="text-indigo-600 font-semibold">
-                    United Kingdom
-                </a>
-
-
-
-            </div>
-
+            {% endfor %}
         </div>
 
         <div class="flex py-6 justify-center">

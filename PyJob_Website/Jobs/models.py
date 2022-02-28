@@ -3,15 +3,15 @@ from django.db import models
 
 # Create your models here.
 class Job(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, null=True)
     company = models.CharField(max_length=50)
     contract = models.CharField(max_length=10, null=True)
     location = models.CharField(max_length=50, null=True)
     remote = models.CharField(max_length=50, null=True)
     education_level = models.CharField(max_length=50, null=True)
     description = models.CharField(max_length=5000)
-    salary = models.IntegerField(null=True)
-    date_published = models.DateTimeField()
+    salary = models.CharField(max_length=50, null=True)
+    date_published = models.CharField(max_length=50, null=True)
     url = models.CharField(max_length=100)
 
     def __str__(self):

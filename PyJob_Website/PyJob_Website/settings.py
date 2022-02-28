@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'PyJob_Website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/daoud/PycharmProjects/pyJob/PyJob_Website/templates'],
+        'DIRS': ['C:/Users/Daoud/Desktop/ESGI/3ème année/Scripting Python/PyJob/PyJob_Website/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
