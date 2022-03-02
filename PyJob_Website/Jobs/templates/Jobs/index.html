@@ -14,7 +14,7 @@
     <header class="bg-gradient-to-r from-custom-violet to-light-violet text-white">
 
         <div class="max-w-6xl mx-auto flex justify-between items-center py-6">
-            <h1 class="text-white font-bold text-xl uppercase">Dev Jobs</h1>
+            <h1 class="text-white font-bold text-xl uppercase">PyJob</h1>
 
 
             <div
@@ -93,6 +93,18 @@
 
 
     <main class="max-w-6xl mx-auto py-24">
+        <div>
+            <form action="" method="post" id="email_form">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
 
         <div class="grid grid-cols-3 gap-12">
             {% for job in jobs%}

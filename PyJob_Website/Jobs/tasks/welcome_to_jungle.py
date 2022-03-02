@@ -102,9 +102,6 @@ def get_updated_HTML(url):
     now = datetime.now()
 
     while ol is None:
-        response.session.close()
-        session = HTMLSession()
-        response = session.get(url)
         response.html.render(timeout=20)
         soup = BeautifulSoup(response.html.html, "html.parser")
         ol = soup.find("ol")
@@ -113,7 +110,6 @@ def get_updated_HTML(url):
     # TODO log or delete
     print(f"retry number {i}, total time : {datetime.now() - now}")
 
-    response.session.close()
 
     return soup
 

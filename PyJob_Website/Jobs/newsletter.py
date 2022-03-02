@@ -7,7 +7,7 @@ from .models import Job, Email
 
 def get_last_week_jobs():
     # TODO change to days=1 for last days
-    previous_date = timezone.now() - timezone.timedelta(days=4)
+    previous_date = timezone.now() - timezone.timedelta(days=1)
     return Job.objects.filter(date_added__lte=previous_date)[:10]
 
 
