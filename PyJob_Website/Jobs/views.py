@@ -1,20 +1,15 @@
-from django.http import HttpResponse
-from .indeed import *
-from .models import Job
+from PyJob_Website.Jobs.tasks.indeed import *
 from django.shortcuts import render
 from django.contrib import messages
 
 from .forms import EmailForm
-from .models import Email
+from .models import Email, Job
 
 
 def index(request):
-    template = 'https://fr.indeed.com/jobs?q={}&l={}'
-    url = template.format('data scientist', 'Paris')
-    soup = BeautifulSoup(response.text, 'html.parser')
-    cards = soup.find_all('div', 'job_seen_beacon')
+    jobs = Job.objects.all()[:15]
 
-    #jobs = Job.objects.all()[:15]
+    return render(request, "index.html", context={'jobs': jobs})
 
 def email(request):
 
@@ -36,4 +31,3 @@ def email(request):
         form = EmailForm()
     return render(request, 'Jobs/email.html', {'form': form})
 
-    return render(request, "index.html", context={'jobs': jobs})

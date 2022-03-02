@@ -11,11 +11,7 @@ def get_url(position, location):
     return url
 
 
-url = get_url('data scientist', 'Paris')
 
-# ***Extraire le html du site Indeed***#
-
-response = requests.get(url)  # response.reason = 'OK' si l'URL est trouvé
 
 
 # ***Création du modèle de données***#
@@ -79,3 +75,18 @@ def get_data_job(card):
            "salary": job_salary, "date_published": post_date, "url": job_url}
     return job
 
+
+def scrap_indeed():
+    url = get_url('data scientist', 'Paris')
+
+    # ***Extraire le html du site Indeed***#
+    response = requests.get(url)  # response.reason = 'OK' si l'URL est trouvé
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+    cards = soup.find_all('div', 'job_seen_beacon')
+
+    jobs = list()
+    for card in cards:
+        jobs.append(get_data_job(card))
+
+    return jobs

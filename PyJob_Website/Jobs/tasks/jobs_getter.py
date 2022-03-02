@@ -1,5 +1,6 @@
 from .welcome_to_jungle import scrap_welcome_to_the_jungle
 from .scrap_monster import scrap_monster_jobs
+from .indeed import scrap_indeed
 from ..models import Job
 
 
@@ -26,7 +27,7 @@ def job_caller():
     jobs = list()
     jobs += scrap_welcome_to_the_jungle()
     jobs += scrap_monster_jobs()
-    # TODO indeed
+    jobs += scrap_indeed()
 
     jobs = verify(jobs)
     print("job verifiés")
