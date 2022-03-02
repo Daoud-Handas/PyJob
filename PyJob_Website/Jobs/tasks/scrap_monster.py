@@ -7,7 +7,6 @@ from ..models import Job
 
 
 def scrap_monster_jobs():
-    today = date.today()
 
     query_search = {'q': 'python'}  # here goes the variable
 
@@ -24,9 +23,11 @@ def scrap_monster_jobs():
         }
             for job in o_dict['rss']['channel']['item']]
 
+        return jobs
+
         # create new instance
-        for job in jobs:
-            new_job = Job(**job)
-            new_job.save()
+        # for job in jobs:
+        #     new_job = Job(**job)
+        #     new_job.save()
         # save to database
 

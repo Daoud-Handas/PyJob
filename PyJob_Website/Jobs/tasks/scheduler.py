@@ -1,9 +1,9 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from . import scrap_monster
+from .jobs_getter import job_caller
 
 
 def schedule():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(scrap_monster.scrap_monster_jobs, 'interval', seconds=5)
+    scheduler.add_job(job_caller(), 'interval', hours=24)
     scheduler.start()
