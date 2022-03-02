@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 
 
 # ***Génère une URL à partir d'un intitulé de poste et la localisation***#
+from django.utils import timezone
+
 
 def get_url(position, location):
     template = 'https://fr.indeed.com/jobs?q={}&l={}'
@@ -11,15 +13,9 @@ def get_url(position, location):
     return url
 
 
-
-
-
 # ***Création du modèle de données***#
-
 def get_data_job(card):
     titleSpan = card.h2.span
-    soup = BeautifulSoup(response.text, 'html.parser')
-    url = ""
 
     # Comme le salaire n'est pas toujours spécifié, gérer ce cas
     if titleSpan.get("title") is not None:
@@ -41,10 +37,10 @@ def get_data_job(card):
             day.append(i)
     if day:
         day = "".join(day)
-        post_date = datetime.now() - timedelta(days=int(day))
+        post_date = timezone.datetime.now() - timedelta(days=int(day))
         post_date = post_date.date()
     else:
-        post_date = "Today"
+        post_date = timezone.datetime.now()
 
     # Comme le salaire n'est pas toujours spécifié, gérer ce cas
     try:

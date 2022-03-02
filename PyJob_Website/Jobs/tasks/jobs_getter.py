@@ -20,16 +20,18 @@ def save_jobs(jobs):
     for job in jobs:
         new_job = Job(**job)
         new_job.save()
-        print(f"job ajouté : {job['url']}")
 
 
 def job_caller():
-    jobs = list()
-    jobs += scrap_welcome_to_the_jungle()
-    jobs += scrap_monster_jobs()
-    jobs += scrap_indeed()
-
-    jobs = verify(jobs)
-    print("job verifiés")
-    save_jobs(jobs)
+    # jobs = list()
+    # jobs += scrap_welcome_to_the_jungle()
+    # print("scrap welcome to the jungle done !")
+    # jobs += scrap_monster_jobs()
+    # print("scrap monster done !")
+    # jobs += scrap_indeed()
+    # print("scrap indeed done !")
+    #
+    # jobs = verify(jobs)
+    # print("job verifiés")
+    # save_jobs(jobs)
     print("end !")

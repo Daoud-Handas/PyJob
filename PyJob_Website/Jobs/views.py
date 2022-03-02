@@ -1,4 +1,3 @@
-from PyJob_Website.Jobs.tasks.indeed import *
 from django.shortcuts import render
 from django.contrib import messages
 
@@ -7,9 +6,9 @@ from .models import Email, Job
 
 
 def index(request):
-    jobs = Job.objects.all()[:15]
+    jobs = Job.objects.all()[:100]
 
-    return render(request, "index.html", context={'jobs': jobs})
+    return render(request, "Jobs/index.html", context={'jobs': jobs})
 
 def email(request):
 
