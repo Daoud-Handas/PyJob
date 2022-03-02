@@ -33,6 +33,12 @@ class Job(models.Model):
             url: {self.url}
         """
 
+    def get_short_description(self):
+        return self.description[0:100] + "..."
+
+    def get_location(self):
+        return self.location if self.location else ""
+
 
 class Email(models.Model):
     email = models.EmailField(max_length=100, primary_key=True)

@@ -6,7 +6,10 @@ from .models import Email, Job
 
 
 def index(request):
-    jobs = Job.objects.all()[:100]
+    if request.GET and request.GET['search']:
+        jobs = Job.objects.filter(description__contains=request.GET['search'])
+    else:
+        jobs = Job.objects.all()[:100]
 
     return render(request, "Jobs/index.html", context={'jobs': jobs})
 

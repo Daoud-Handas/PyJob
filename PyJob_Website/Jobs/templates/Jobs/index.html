@@ -19,16 +19,19 @@
 
             <div
                     x-data="{toggle: false}"
-                    x-init = "toggle = document.body.classList.contains('dark')"
+                    x-init="toggle = document.body.classList.contains('dark')"
             >
                 <div class="flex items-center justify-center space-x-2">
                 <span>
                     <svg width="20" height="19" xmlns="http://www.w3.org/2000/svg" class="w-6">
-                    <path d="M10 15.635c.33 0 .612.295.612.639v1.89c0 .344-.282.638-.612.638s-.612-.294-.612-.638v-1.89c0-.344.282-.639.612-.639zm-4.488-1.783c.27.262.27.68 0 .941L4.03 16.231a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.7-.261.97 0zm9.946 0l1.483 1.438c.27.261.27.68 0 .941a.698.698 0 01-.97 0l-1.483-1.438a.649.649 0 010-.94c.242-.262.674-.262.97 0zM10 4.552c1.396 0 2.685.525 3.598 1.4.913.85 1.504 2.05 1.504 3.35 0 1.3-.59 2.5-1.504 3.35a5.314 5.314 0 01-3.598 1.4c-1.396 0-2.685-.525-3.598-1.4-.913-.85-1.504-2.05-1.504-3.35 0-1.3.564-2.5 1.504-3.35A5.314 5.314 0 0110 4.552zM2.607 8.906c.355 0 .658.274.658.594 0 .32-.303.594-.658.594H.658C.304 10.094 0 9.82 0 9.5c0-.32.304-.594.658-.594h1.95zm16.735 0c.354 0 .658.274.658.594 0 .32-.304.594-.658.594h-1.95c-.354 0-.657-.274-.657-.594 0-.32.303-.594.658-.594h1.949zM4.03 2.77l1.482 1.438c.27.261.27.68 0 .94-.242.262-.674.262-.97 0L3.059 3.71a.649.649 0 010-.941c.27-.261.701-.261.97 0zm12.91 0c.27.261.27.68 0 .941l-1.482 1.438a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.701-.261.97 0zM10 .198c.33 0 .612.294.612.638v1.89c0 .344-.282.639-.612.639s-.612-.295-.612-.639V.836c0-.344.282-.638.612-.638z" fill="currentColor" fill-rule="nonzero"/>
+                    <path d="M10 15.635c.33 0 .612.295.612.639v1.89c0 .344-.282.638-.612.638s-.612-.294-.612-.638v-1.89c0-.344.282-.639.612-.639zm-4.488-1.783c.27.262.27.68 0 .941L4.03 16.231a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.7-.261.97 0zm9.946 0l1.483 1.438c.27.261.27.68 0 .941a.698.698 0 01-.97 0l-1.483-1.438a.649.649 0 010-.94c.242-.262.674-.262.97 0zM10 4.552c1.396 0 2.685.525 3.598 1.4.913.85 1.504 2.05 1.504 3.35 0 1.3-.59 2.5-1.504 3.35a5.314 5.314 0 01-3.598 1.4c-1.396 0-2.685-.525-3.598-1.4-.913-.85-1.504-2.05-1.504-3.35 0-1.3.564-2.5 1.504-3.35A5.314 5.314 0 0110 4.552zM2.607 8.906c.355 0 .658.274.658.594 0 .32-.303.594-.658.594H.658C.304 10.094 0 9.82 0 9.5c0-.32.304-.594.658-.594h1.95zm16.735 0c.354 0 .658.274.658.594 0 .32-.304.594-.658.594h-1.95c-.354 0-.657-.274-.657-.594 0-.32.303-.594.658-.594h1.949zM4.03 2.77l1.482 1.438c.27.261.27.68 0 .94-.242.262-.674.262-.97 0L3.059 3.71a.649.649 0 010-.941c.27-.261.701-.261.97 0zm12.91 0c.27.261.27.68 0 .941l-1.482 1.438a.698.698 0 01-.97 0 .649.649 0 010-.941l1.482-1.438c.27-.261.701-.261.97 0zM10 .198c.33 0 .612.294.612.638v1.89c0 .344-.282.639-.612.639s-.612-.295-.612-.639V.836c0-.344.282-.638.612-.638z"
+                          fill="currentColor" fill-rule="nonzero"/>
                 </svg>
                 </span>
                     <div class=" relative w-12 h-6 transition duration-200 ease-linear rounded-full cursor-pointer bg-white">
-                        <label for="toggle" class="absolute left-0 bottom-0 w-6 h-6 transition duration-100 ease-linear transform bg-midnight rounded-full cursor-pointer" :class="[toggle ? 'translate-x-full ' : 'translate-x-0']">
+                        <label for="toggle"
+                               class="absolute left-0 bottom-0 w-6 h-6 transition duration-100 ease-linear transform bg-midnight rounded-full cursor-pointer"
+                               :class="[toggle ? 'translate-x-full ' : 'translate-x-0']">
                         </label>
 
                         <input
@@ -42,7 +45,8 @@
                     </div>
                     <span>
                 <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="w-6">
-                    <path d="M6 0c1.516 0 2.925.566 3.978 1.523A3.979 3.979 0 008 1a4.014 4.014 0 00-2.821 1.179A3.927 3.927 0 004 5c0 1.095.463 2.105 1.179 2.821A3.927 3.927 0 008 9a4.034 4.034 0 003.974-3.548c.017.18.026.364.026.548a6.02 6.02 0 01-1.768 4.232A6.02 6.02 0 016 12a5.89 5.89 0 01-4.232-1.768A6.02 6.02 0 010 6a5.89 5.89 0 011.768-4.232A6.02 6.02 0 016 0z" fill="#FFF" fill-rule="nonzero"/>
+                    <path d="M6 0c1.516 0 2.925.566 3.978 1.523A3.979 3.979 0 008 1a4.014 4.014 0 00-2.821 1.179A3.927 3.927 0 004 5c0 1.095.463 2.105 1.179 2.821A3.927 3.927 0 008 9a4.034 4.034 0 003.974-3.548c.017.18.026.364.026.548a6.02 6.02 0 01-1.768 4.232A6.02 6.02 0 016 12a5.89 5.89 0 01-4.232-1.768A6.02 6.02 0 010 6a5.89 5.89 0 011.768-4.232A6.02 6.02 0 016 0z"
+                          fill="#FFF" fill-rule="nonzero"/>
                 </svg>
             </span>
                 </div>
@@ -52,39 +56,28 @@
 
         <nav class="shadow w-full max-w-6xl mx-auto relative -bottom-6 left-0 right-0 mb-4 text-gray-900 dark:text-light-gray bg-white dark:bg-very-dark-blue rounded-md">
 
-            <div class="flex space-x-6 px-6">
+
+            <form method="GET" class="flex space-x-6 px-6">
                 <div class="grow flex items-center space-x-2 py-4">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z" fill="#5964E0" fill-rule="nonzero"/></svg>
-                    <input type="text" class="w-full border-0 outline-none px-4 py-3 focus:outline-none dark:bg-very-dark-blue" placeholder="filter by titles, companies, expertise...">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"
+                              fill="#5964E0" fill-rule="nonzero"/>
+                    </svg>
+
+                    <input type="text" name="search"
+                           class="w-full border-0 outline-none px-4 py-3 focus:outline-none dark:bg-very-dark-blue"
+                           placeholder="filter by titles, companies, expertise...">
                 </div>
 
-
-                <div class="flex items-center px-4 border-gray-100 dark:border-dark-gray 300 border-l border-r border-0.5 py-4">
-                    <span class="mx-2">
-                        <svg width="17" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M14.358 2.451A8.3 8.3 0 008.448 0a8.3 8.3 0 00-5.911 2.451c-2.922 2.925-3.285 8.427-.786 11.76l6.697 9.683 6.687-9.669c2.508-3.347 2.145-8.85-.777-11.774zm-5.833 8.894a3.057 3.057 0 01-3.051-3.054 3.057 3.057 0 013.05-3.055 3.057 3.057 0 013.052 3.055 3.057 3.057 0 01-3.051 3.054z" fill="#5964E0" fill-rule="nonzero"/></svg>
-                    </span>
-                    <input type="text" class="w-full border-0 outline-none px-4 py-3 focus:outline-none dark:bg-very-dark-blue"
-                           placeholder="filter by location..."
-                    >
-                </div>
-
-                <div class="flex items-center space-x-4 justify-between py-4">
-                    <label>
-                        <input type="checkbox" class="bg-green-800 h-5 w-5 text-gray-600" checked>
-                    </label>
-                    <span class="font-bold">Full Time Only</span>
-
-
-                    <button class="px-8 py-2 bg-custom-violet hover:bg-light-violet rounded font-semibold text-white transition-colors duration-300">
+                <div class="flex items-center">
+                    <button type="submit"
+                            class="px-8 py-2 bg-custom-violet hover:bg-light-violet rounded font-semibold text-white transition-colors duration-300">
                         Search
                     </button>
-
-
                 </div>
 
+            </form>
 
-
-            </div>
 
         </nav>
 
@@ -96,30 +89,30 @@
 
         <div class="grid grid-cols-3 gap-12">
             {% for job in jobs%}
-                <div class="dark:bg-very-dark-blue bg-white w-full shadow rounded px-6 py-8 space-y-6">
-                    <div class="text-dark-gray font-light leading-7 mb-6">
-                        <p class="space-x-2">
+            <div class="dark:bg-very-dark-blue bg-white w-full shadow rounded px-6 py-8 space-y-6">
+                <div class="text-dark-gray font-light leading-7 mb-6">
+                    <p class="space-x-2">
                         <a href={{job.url}}>
                             {{job.title}}
                         </a>
-                            <span class="inline-block w-1 h-1 rounded-full bg-dark-gray"></span>
-                            <span>
+                        <span class="inline-block w-1 h-1 rounded-full bg-dark-gray"></span>
+                        <span>
                             {{job.company}}
                         </span>
-                        </p>
-                        <p class="font-semibold dark:text-white">
-                            {{job.description}}
-                        </p>
-                        <p>
-                            {{job.date_published}}
-                        </p>
-                    </div>
-
-                    <a href="#" class="text-indigo-600 font-semibold">
-                        {{job.location}}
-                    </a>
-
+                    </p>
+                    <p class="font-semibold dark:text-white">
+                        {{ job.get_short_description }}
+                    </p>
+                    <p>
+                        {{job.date_published}}
+                    </p>
                 </div>
+
+                <p class="dark:text-white">
+                    {{job.get_location }}
+                </p>
+
+            </div>
             {% endfor %}
         </div>
 
