@@ -56,7 +56,7 @@ ROOT_URLCONF = 'PyJob_Website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/Daoud/Desktop/ESGI/3ème année/Scripting Python/PyJob/PyJob_Website/templates'],
+        'DIRS': ['C:/Users/Daoud/Desktop/ESGI/3ème année/Scripting Python/PyJob/PyJob_Website/PyJob_Website/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
